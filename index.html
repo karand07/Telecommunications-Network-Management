@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecommunications Network Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.4/dagre-d3.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Telecommunications Network Management System</h1>
+
+        <div class="input-section">
+            <h2>Network Device Management</h2>
+            <div class="device-inputs">
+                <div>
+                    <label for="deviceName">Device Name:</label>
+                    <input type="text" id="deviceName" placeholder="Router/Switch Name" class="form-control">
+                    <label for="deviceType">Device Type:</label>
+                    <select id="deviceType" class="form-control">
+                        <option value="router">Router</option>
+                        <option value="switch">Switch</option>
+                        <option value="server">Server</option>
+                    </select>
+                    <label for="deviceLocation">Location:</label>
+                    <select id="deviceLocation" class="form-control">
+                        <option value="global">Global Network</option>
+                        <option value="regional">Regional Network</option>
+                        <option value="local">Local Network</option>
+                    </select>
+                    <button id="addDeviceBtn" class="btn">Add Device</button>
+                </div>
+                <div>
+                    <label for="sourceDevice">Source Device:</label>
+                    <input type="text" id="sourceDevice" placeholder="Source Device" class="form-control">
+                    <label for="targetDevice">Target Device:</label>
+                    <input type="text" id="targetDevice" placeholder="Target Device" class="form-control">
+                    <label for="connectionType">Connection Type:</label>
+                    <select id="connectionType" class="form-control">
+                        <option value="lan">LAN</option>
+                        <option value="wan">WAN</option>
+                        <option value="vpn">VPN</option>
+                    </select>
+                    <button id="addConnectionBtn" class="btn">Add Connection</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="network-visualization">
+            <div class="network-graph">
+                <h2>Network Topology</h2>
+                <svg id="graph" width="800" height="500"></svg>
+            </div>
+
+            <div class="admin-tree">
+                <h2>Administrative Network Hierarchy</h2>
+                <ul id="adminTree" class="tree"></ul>
+            </div>
+        </div>
+
+        <div class="performance">
+            <h2>Network Performance Metrics</h2>
+            <div id="performanceMetrics" class="metrics">
+                <div class="metric-card">
+                    <h3>Bandwidth Usage</h3>
+                    <div id="bandwidthUsage"></div>
+                </div>
+                <div class="metric-card">
+                    <h3>Network Health</h3>
+                    <div id="networkHealth"></div>
+                </div>
+                <div class="metric-card">
+                    <h3>Routing Efficiency</h3>
+                    <div id="routingEfficiency"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
